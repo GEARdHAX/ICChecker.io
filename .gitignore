@@ -17,9 +17,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
+
+# =========================
+#  IDE / Editor Files
+# =========================
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
 
 # =========================
 #  Temporary Files
@@ -27,30 +33,55 @@ pnpm-debug.log*
 *.tmp
 *.swp
 *.swo
+*.bak
+*.old
 
 # =========================
-#  Images / Assets
+#  Root Images / Assets
 # =========================
-# Ignore raw image uploads or heavy assets
+# Ignore all image files in root folder
+/images/*
+!images/.gitkeep
+
+# =========================
+#  Frontend Assets (optional)
+# =========================
 src/assets/images/*
-!src/assets/images/.gitkeep   # keep placeholder if needed
+!src/assets/images/.gitkeep
 
 # =========================
-#  Coverage & Reports
+#  ML / Dataset Files
+# =========================
+/datasets/
+/models/
+/checkpoints/
+*.pt
+*.pth
+*.h5
+*.onnx
+*.weights
+*.csv
+*.xlsx
+*.zip
+
+# =========================
+#  Coverage / Reports
 # =========================
 coverage/
 *.lcov
 
 # =========================
-#  OS / Editor Files
-# =========================
-Thumbs.db
-*.bak
-*.old
-
-# =========================
 #  Docker / Build Artifacts
 # =========================
 /docker/
-*.tar
+/compose/
+/build/
+/dist/
 *.pid
+*.tar
+
+# =========================
+#  OS Generated
+# =========================
+ehthumbs.db
+desktop.ini
