@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# MongoDB Driver and ODM
+beanie
+
+# ML & Image Processing
+torch
+torchvision
+ultralytics
+easyocr
+opencv-python-headless

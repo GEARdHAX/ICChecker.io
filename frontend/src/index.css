@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General body styling */
+body {
+  background-color: #f8f9fa; /* Light mode background */
+  color: #495057; /* Light mode text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode body styling */
+.dark body {
+  background-color: #111827; /* Dark mode background */
+  color: #f9fafb; /* Dark mode text */
+}
