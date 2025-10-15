@@ -53,8 +53,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 onClick={closeMobileMenu}
-                // FIX: Ensures text is light (text-text-main) and visible on the dark background
-                className="text-text-dark text-lg py-3 px-4 rounded-md hover:bg-primary/20 transition-colors"
+                className="text-text-main text-lg py-3 px-4 rounded-md hover:bg-primary/20 transition-colors"
               >
                 {link.label}
               </NavLink>
