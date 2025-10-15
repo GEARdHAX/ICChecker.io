@@ -36,9 +36,9 @@ export default function HomePage() {
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
         {features.map((feature, index) => (
-          <GlassCard key={index} className="p-8 text-center">
+          <GlassCard key={index} className="p-6 text-center">
             <i className={`${feature.icon} text-4xl text-primary mb-4`}></i>
             <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
             <p className="text-slate-300">{feature.desc}</p>
