@@ -70,37 +70,53 @@ ICChecker.io solves this with an **Automated Optical Inspection (AOI)** + **AI-b
 
 ```
 
-src/
-├── api/
-│   └── mockApiService.js       # Mock API for frontend development
-├── assets/
-│   └── images/                 # For background patterns, logos, etc.
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.jsx
-│   │   └── Footer.jsx
-│   ├── shared/                 # Reusable components like buttons, cards
-│   │   ├── GlassCard.jsx
-│   │   ├── GlowingButton.jsx
-│   │   └── FeatureCard.jsx
-│   └── home/
-│       ├── HeroSection.jsx
-│       └── FeaturesGrid.jsx
-├── hooks/
-│   └── useTheme.js             # Logic for theme management (if needed)
-├── pages/
-│   ├── HomePage.jsx
-│   ├── UploadPage.jsx
-│   ├── DashboardPage.jsx
-│   ├── HistoryPage.jsx
-│   └── AboutPage.jsx
-├── store/
-│   └── appStore.js             # Zustand global state
-├── styles/
-│   ├── custom-styles.css       # For custom animations and gradients
-│   └── index.css               # Main Tailwind CSS file
-├── App.jsx                     # Main application router
-└── main.jsx
+ICChecker.io/
+├── backend/                  # FastAPI + MongoDB Backend
+│   ├── ml_models/
+│   │   ├── my_best_ic_leg_model.pt
+│   │   └── my_best_ic_model.pt
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── database.py
+│   │   └── services/
+│   │       ├── __init__.py
+│   │       ├── defect_service.py
+│   │       ├── ocr_service.py
+│   │       └── verification.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+└── frontend/                 # React + PrimeReact Frontend
+    ├── public/
+    ├── src/
+    │   ├── api/
+    │   │   └── apiService.js
+    │   ├── assets/
+    │   ├── components/
+    │   │   ├── layout/
+    │   │   │   ├── Navbar.jsx
+    │   │   │   ├── Footer.jsx
+    │   │   │   └── PageWrapper.jsx
+    │   │   └── shared/
+    │   │       ├── GlassCard.jsx
+    │   │       └── GlowingButton.jsx
+    │   ├── pages/
+    │   │   ├── HomePage.jsx
+    │   │   ├── UploadPage.jsx
+    │   │   ├── DashboardPage.jsx
+    │   │   └── HistoryPage.jsx
+    │   ├── store/
+    │   │   └── appStore.js
+    │   ├── styles/
+    │   │   └── index.css
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── index.html
+    ├── package.json
+    └── tailwind.config.js
 
 ````
 
