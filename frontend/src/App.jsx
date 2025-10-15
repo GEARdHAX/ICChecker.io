@@ -18,6 +18,7 @@ import ResultPage from './pages/ResultPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminPanel from './pages/AdminPanel';
 import { useTheme } from './hooks/useTheme';
+import AboutPage from './pages/AboutPage';
 
 const AnimatedRoutes = () => {
   // ... (this component remains the same)
@@ -30,6 +31,7 @@ const AnimatedRoutes = () => {
         <Route path="/result/:id" element={<ResultPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </AnimatePresence>
   );

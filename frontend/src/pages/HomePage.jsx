@@ -1,60 +1,53 @@
-import { useNavigate } from 'react-router-dom';
-import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
-import { Timeline } from 'primereact/timeline';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import PageWrapper from '../components/layout/PageWrapper';
+import GlassCard from '../components/shared/GlassCard';
+import GlowingButton from '../components/shared/GlowingButton';
+
+const features = [
+  { icon: "pi pi-search", title: "Smart Image Detection", desc: "Analyze IC surfaces, broken legs, and misaligned text instantly with AI." },
+  { icon: "pi pi-database", title: "Datasheet Sync", desc: "Checks your local DB first, then auto-fetches missing datasheets from the web." },
+  { icon: "pi pi-shield", title: "Trusted Trade System", desc: "View supplier trust scores and confidence levels – Good, Review, or Bad." },
+  { icon: "pi pi-chart-line", title: "Visual Reports", desc: "Interactive dashboards for result tracking and supplier performance trends." },
+];
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const pipelineEvents = [
-    { status: 'Upload', icon: 'pi pi-upload' },
-    { status: 'AI-Powered OCR', icon: 'pi pi-search' },
-    { status: 'Trust Check', icon: 'pi pi-shield' },
-    { status: 'Datasheet Match', icon: 'pi pi-file-check' },
-    { status: 'Final Verdict', icon: 'pi pi-check-circle' },
-  ];
 
   return (
     <PageWrapper>
-      <div className="text-center py-16">
+      {/* Hero Section */}
+      <div className="text-center pt-24 pb-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-extrabold mb-4"
+          className="text-5xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary"
         >
-          Verify IC Authenticity in Seconds
+          AI-Powered IC Verification
         </motion.h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-          Leveraging AI to combat counterfeit electronic components with confidence.
+        <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+          Upload, Verify, and Trust your Integrated Circuits in one smart pipeline.
         </p>
-        <Button
-          className='gap-2 rounded-xl border border-primary hover:rounded-full p-3 transition-all'
-          label="Start Verification"
-          icon="pi pi-arrow-right"
-          size="large"
-          onClick={() => navigate('/upload')}
-        />
+        <div className="flex justify-center gap-4">
+          <GlowingButton label="Get Started" onClick={() => navigate('/upload')} icon="pi pi-arrow-right" />
+          <GlowingButton label="Learn More" onClick={() => navigate('/about')} type="outline" />
+        </div>
       </div>
 
-      <div className="my-16">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Verification Pipeline</h2>
-        <Timeline 
-          value={pipelineEvents} 
-          align="alternate" 
-          className="customized-timeline"
-          content={(item) => item.status}
-          marker={(item) => (
-            <span className={`flex items-center justify-center w-9 h-9
-              text-primary 
-               dark:text-white`}
-            >
-              <i className={`${item.icon} text-lg`}></i>
-            </span>
-          )}
-        />
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-16">
+        {features.map((feature, index) => (
+          <GlassCard key={index} className="p-8 text-center">
+            <i className={`${feature.icon} text-4xl text-primary mb-4`}></i>
+            <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+            <p className="text-slate-300">{feature.desc}</p>
+          </GlassCard>
+        ))}
       </div>
     </PageWrapper>
   );
 }
+
+// NOTE: PageWrapper is a simple Framer Motion component used in previous examples.
+// You can create it in src/components/layout/PageWrapper.jsx
